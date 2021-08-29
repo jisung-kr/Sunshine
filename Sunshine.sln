@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sendbox", "Sendbox\Sendbox.vcxproj", "{B8BB30E8-8EA6-46A6-87F4-D026E30794AE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sunshine", "Sunshine\Sunshine.vcxitems", "{D074AE50-C933-46F1-851A-D6EF7699EC12}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Sunshine\Sunshine.vcxitems*{b8bb30e8-8ea6-46a6-87f4-d026e30794ae}*SharedItemsImports = 4
+		Sunshine\Sunshine.vcxitems*{d074ae50-c933-46f1-851a-d6ef7699ec12}*SharedItemsImports = 9
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8BB30E8-8EA6-46A6-87F4-D026E30794AE}.Debug|x64.ActiveCfg = Debug|x64
+		{B8BB30E8-8EA6-46A6-87F4-D026E30794AE}.Debug|x64.Build.0 = Debug|x64
+		{B8BB30E8-8EA6-46A6-87F4-D026E30794AE}.Release|x64.ActiveCfg = Release|x64
+		{B8BB30E8-8EA6-46A6-87F4-D026E30794AE}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1C6F29B-02C6-4246-A6DB-F7278125BAA5}
+	EndGlobalSection
+EndGlobal
