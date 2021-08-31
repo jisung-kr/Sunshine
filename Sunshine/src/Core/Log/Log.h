@@ -1,17 +1,16 @@
 #pragma once
-#include "src/CommonDefine.h"
+
+#include "src/IndependenceLayer/IndependenceLayer.h"
 
 
 
 
+NS_SUNSHINE_BEGIN
 
-NS_SUNSHINE_START
 
-
-class SELog
+class SUNSHINE_API Log
 {
 
 };
-
 
 NS_SUNSHINE_END

@@ -14,10 +14,19 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)src\CommonDefine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\LinearAllocator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\CommonDefine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Core.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Log\Log.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\DataType.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\Memory.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\Atomic Data Types\DataType.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\Collections\Collections.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\FileSystem\FileSystem.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\IndependenceLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Sunshine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\LinearAllocator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\Memory.cpp" />
   </ItemGroup>
 </Project>
