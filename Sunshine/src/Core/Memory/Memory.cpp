@@ -10,7 +10,9 @@ void Initialize(size_t blockSize, size_t persistSize)
 	_ASSERT(g_memoryBlock != nullptr);
 
 	LinearAllocator::Initialize(g_memoryBlock, persistSize);
-	
+
+	printf("Memory Block Initialize : %lld bytes\n", blockSize);
+	printf("Persist Area: 0x%08lld ~ 0x%08lld\n", 0ll, persistSize);
 	
 }
 
