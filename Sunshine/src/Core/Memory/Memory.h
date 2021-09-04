@@ -2,20 +2,23 @@
 
 #include "src/IndependenceLayer/IndependenceLayer.h"
 #include "LinearAllocator.h"
-
+#include "PersistAllocator.h"
 
 /*
  @ Memory Map (2021-08-31)
 
  -----------
+ | System  |
+ -----------
  | Persist |
  -----------
  | Dynamic |
  -----------
- |  Frame  |
+ | Frame   |
  -----------
 
- Persist is existed program ended
+ System is memory table storage for dynamic area.
+ Persist is existed program ended.
  Dynamic is memory like heap. so, need trace memory system at runtime.
  frame is memory that one frame in game.
 
@@ -25,9 +28,15 @@ NS_SUNSHINE_BEGIN
 
 NS_MEMORYSYSTEM_BEGIN
 
-static char* g_memoryBlock = nullptr;
 
-void Initialize(size_t blockSize, size_t persistSize);
+void Initialize(
+	size_t blockSize, 
+	size_t systemAreaSize, 
+	size_t persistAreaSize, 
+	size_t dynamicAreaSize,
+	size_t frameAreaSize);
+
+
 
 
 NS_MEMORYSYSTEM_END

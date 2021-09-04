@@ -14,7 +14,10 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\DynamicAllocator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\LinearAllocator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\MemoryHandle.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\PersistAllocator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\IndependenceLayer\CommonDefine.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Core.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Log\Log.h" />
@@ -26,7 +29,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Sunshine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\DynamicAllocator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\LinearAllocator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\Memory.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\PersistAllocator.cpp" />
   </ItemGroup>
 </Project>
