@@ -6,6 +6,12 @@
 NS_SUNSHINE_BEGIN
 NS_MEMORYSYSTEM_BEGIN
 
+extern char* g_systemArea;
+extern size_t g_systemMemorySize;
+
+extern char* g_dynamicArea;
+extern size_t g_dynamicMemorySize;
+
 template <typename T>
 class SUNSHINE_API DynamicAllocator final
 {
@@ -35,16 +41,16 @@ public:
 			return nullptr;
 
 		void* memoryAddr = nullptr;
-		TableRecord* curRecord = (TableRecord*)(g_systemArea + index * recordSize);
+		TableRecord* curRecord = GetTableRecord(index);
 		if (index == 0)
 			memoryAddr = g_dynamicArea;
 		else
 		{
-			TableRecord* prevRecord = (TableRecord*)(g_systemArea + (emptyIndex - 1) * recordSize);
+			TableRecord* prevRecord = GetTableRecord(index - 1);
 			memoryAddr = (char*)prevRecord->Address + prevRecord->Size;
 		}
 		curRecord->Address = memoryAddr;
-		curRecord->Size = sizeof(T * objectNum));
+		curRecord->Size = sizeof(T) * objectNum;
 
 		printf("allocate!!\n");
 

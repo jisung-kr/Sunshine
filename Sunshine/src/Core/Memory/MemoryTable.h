@@ -17,5 +17,7 @@ void* FindPointerFromTable(size_t index);
 size_t GetEmptyIndex();
 size_t GetEmptyIndex(size_t memorySize);
 
+TableRecord GetTableRecord(size_t index);
+
 NS_MEMORYSYSTEM_END
 NS_SUNSHINE_END

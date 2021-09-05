@@ -7,39 +7,40 @@ NS_MEMORYSYSTEM_BEGIN
 
 extern char* g_persistArea;
 extern size_t g_persistMemorySize;
-size_t _offset;
-template <typename T>
+size_t _persistOffset;
+
+
 class SUNSHINE_API PersistAllocator final
 {
 public:
-	using value_type = T;
+	//using value_type = T;
 
-	template <class U>
-	struct rebind { typedef PersistAllocator<U> other; };
+	//template <class U>
+	//struct rebind { typedef PersistAllocator<U> other; };
 
 	PersistAllocator() = default;
 	~PersistAllocator() = default;
 
-	template <typename U>
-	PersistAllocator(const PersistAllocator<U>&other) { }
+	//template <typename U>
+	//PersistAllocator(const PersistAllocator<U>&other) { }
 
-	T* allocate(size_t objectNum, const void* hint) {
+	void* allocate(size_t objectNum, const void* hint) {
 		allocate(objectNum);
 	}
 
-	T* allocate(size_t objectNum) {
-		T* allocatedMemory = 
+	static void* allocate(size_t objectNum) {
+		void* allocatedMemory = g_persistArea + _persistOffset;
+		_persistOffset = objectNum;
 		printf("allocate!!\n");
-		return static_cast<T*>(operator new(sizeof(T) * ObjectNum));
+		return static_cast<void*>(allocatedMemory);
 	}
 
-	void deallocate(T* ptr, size_t objectNum) {
-		printf("deallocate!\n");
-		//operator delete(p);
+	static void deallocate(void* ptr, size_t objectNum) {
+		printf("Persist Not deallocated!\n");
 	}
 
 	size_t max_size() const {
-		return std::numeric_limits<size_t>::max() / sizeof(value_type);
+		return std::numeric_limits<size_t>::max();
 	}
 
 	template<typename U, typename... Args>
@@ -51,8 +52,6 @@ public:
 	void destroy(U * p) {
 		p->~U();
 	}
-private:
-
 };
 NS_MEMORYSYSTEM_END
 NS_SUNSHINE_END

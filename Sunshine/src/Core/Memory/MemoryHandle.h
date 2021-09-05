@@ -5,17 +5,20 @@
 NS_SUNSHINE_BEGIN
 NS_MEMORYSYSTEM_BEGIN
 
-template <typename T>
+
 class SUNSHINE_API Handle final
 {
 public:
-	Handle(T* actualAddress)
+	Handle(char* actualAddress)
 	{
-		_ASSERT(g_systemArea != nullptr);
-
 		_tableIndex = FindIndexFromTable(actualAddress);
 	}
-	///*
+
+	~Handle()
+	{
+
+	}
+	/*
 	operator T* ()
 	{
 		_ASSERT(g_systemArea != nullptr);
@@ -24,7 +27,6 @@ public:
 
 		return (T*)ptr;
 	}
-	//*/
 	operator T()
 	{
 		_ASSERT(g_systemArea != nullptr);
@@ -35,6 +37,7 @@ public:
 
 		return *ptr;
 	}
+	//*/
 
 
 private:

@@ -1,5 +1,6 @@
 
 #include "src/Sunshine.h"
+#include "src/Core/Memory/PersistArea.h"
 #include <vector>
 #include <chrono>
 
@@ -19,7 +20,7 @@ int main()
 	{
 		auto start = std::chrono::system_clock::now();
 		for (int i = 0; i < count; ++i)
-			Sunshine::MemorySystem::PersistAllocator::Allocate(sizeof(int));
+			Sunshine::MemorySystem::PersistArea::Allocate(sizeof(int));
 		auto end = std::chrono::system_clock::now();
 
 		printf("PersistAllocator : %lldms\n",
@@ -38,13 +39,9 @@ int main()
 			std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count());
 	}
 
+	//vector<int, Sunshine::MemorySystem::PersistAllocator> test;
 	
-	vector<int, Sunshine::MemorySystem::LinearAllocator<int>> test;
-	test.push_back(10);
-	test.push_back(10);
-	test.push_back(10);
-	test.push_back(10);
-	
+
 
 	return 0;
 }
