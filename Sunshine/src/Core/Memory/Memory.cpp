@@ -9,7 +9,7 @@ char* g_persistArea = nullptr;
 char* g_dynamicArea = nullptr;
 char* g_frameArea = nullptr;
 
-size_t g_blocSize = 0;
+size_t g_blocSize = 0; 
 size_t g_systemMemorySize = 0;
 size_t g_persistMemorySize = 0;
 size_t g_dynamicMemorySize = 0;

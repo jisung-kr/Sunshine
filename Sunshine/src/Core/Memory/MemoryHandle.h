@@ -1,23 +1,44 @@
 #pragma once
 #include "src/IndependenceLayer/IndependenceLayer.h"
-
+#include "MemoryTable.h"
 
 NS_SUNSHINE_BEGIN
 NS_MEMORYSYSTEM_BEGIN
 
 template <typename T>
-class SUNSHINE_API AllocationUnit
+class SUNSHINE_API Handle final
 {
-
 public:
-	operator T*()
+	Handle(T* actualAddress)
 	{
-		return (T*)this;
+		_ASSERT(g_systemArea != nullptr);
+
+		_tableIndex = FindIndexFromTable(actualAddress);
+	}
+	///*
+	operator T* ()
+	{
+		_ASSERT(g_systemArea != nullptr);
+
+		void ptr = FindPointerFromTable(_tableIndex);
+
+		return (T*)ptr;
+	}
+	//*/
+	operator T()
+	{
+		_ASSERT(g_systemArea != nullptr);
+
+		void ptr = FindPointerFromTable(_tableIndex);
+
+		_ASSERT(ptr != nullptr);
+
+		return *ptr;
 	}
 
+
 private:
-	T _data;
-	int32_t _tableIndex;
+	size_t _tableIndex;
 };
 
 
