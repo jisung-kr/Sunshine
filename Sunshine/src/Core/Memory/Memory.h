@@ -36,6 +36,7 @@ void Initialize(
 	size_t frameAreaSize);
 
 
+void Finalize();
 
 
 NS_MEMORYSYSTEM_END

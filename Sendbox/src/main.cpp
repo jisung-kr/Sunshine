@@ -1,6 +1,8 @@
 
 #include "src/Sunshine.h"
 #include "src/Core/Memory/PersistArea.h"
+#include "src/Core/Memory/DynamicArea.h"
+
 #include <vector>
 #include <chrono>
 
@@ -23,7 +25,7 @@ int main()
 			Sunshine::MemorySystem::PersistArea::Allocate(sizeof(int));
 		auto end = std::chrono::system_clock::now();
 
-		printf("PersistAllocator : %lldms\n",
+		printf("PersistArea : %lldms\n",
 			std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count());
 	}
 
@@ -39,9 +41,41 @@ int main()
 			std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count());
 	}
 
-	//vector<int, Sunshine::MemorySystem::PersistAllocator> test;
-	
 
+	{
+		auto start = std::chrono::system_clock::now();
+
+		for (int i = 0; i < count; ++i)
+		{
+			auto handle = Sunshine::MemorySystem::DynamicArea::Allocate(sizeof(int));
+			Sunshine::MemorySystem::DynamicArea::Deallocate(handle);
+		}
+		auto end = std::chrono::system_clock::now();
+
+		printf("Dyanamic Area : %lldms\n",
+			std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count());
+	}
+
+	{
+		auto start = std::chrono::system_clock::now();
+
+		for (int i = 0; i < count; ++i)
+		{
+			int* handle = new int;
+			delete handle;
+		}
+
+		auto end = std::chrono::system_clock::now();
+
+		printf("New/Delete : %lldms\n",
+			std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count());
+	}
+
+
+
+
+
+	Sunshine::MemorySystem::Finalize();
 
 	return 0;
 }

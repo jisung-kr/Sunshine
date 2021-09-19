@@ -1,6 +1,5 @@
 #pragma once
 #include "src/IndependenceLayer/IndependenceLayer.h"
-#include "MemoryTable.h"
 #include "MemoryHandle.h"
 
 NS_SUNSHINE_BEGIN
@@ -11,7 +10,7 @@ extern size_t g_systemMemorySize;
 
 extern char* g_dynamicArea;
 extern size_t g_dynamicMemorySize;
-
+/*
 template <typename T>
 class SUNSHINE_API DynamicAllocator final
 {
@@ -76,6 +75,6 @@ public:
 		p->~U();
 	}
 };
-
+*/
 NS_MEMORYSYSTEM_END
 NS_SUNSHINE_END

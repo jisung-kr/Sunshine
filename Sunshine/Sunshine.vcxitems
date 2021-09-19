@@ -19,7 +19,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\FrameArea.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\LinearAllocator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\MemoryHandle.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\MemoryTable.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\PersistAllocator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\PersistArea.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Core\Memory\SystemArea.h" />
@@ -39,7 +38,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\FrameArea.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\LinearAllocator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\Memory.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\MemoryTable.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\PersistAllocator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\PersistArea.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Core\Memory\SystemArea.cpp" />

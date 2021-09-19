@@ -41,5 +41,14 @@ void Initialize(size_t blockSize,
 	FrameArea::Initialize(frameAddr, frameAreaSize);
 }
 
+void Finalize()
+{
+
+	delete[] g_memoryBlock;
+	g_memoryBlock = nullptr;
+	g_blockSize = 0;
+	printf("Memory Block Finalized!\n");
+}
+
 NS_MEMORYSYSTEM_END
 NS_SUNSHINE_END

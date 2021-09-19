@@ -1,6 +1,6 @@
 #pragma once
 #include "src/IndependenceLayer/IndependenceLayer.h"
-#include "MemoryTable.h"
+#include "SystemArea.h"
 
 NS_SUNSHINE_BEGIN
 NS_MEMORYSYSTEM_BEGIN
@@ -11,7 +11,7 @@ class SUNSHINE_API Handle final
 public:
 	Handle(char* actualAddress)
 	{
-		_tableIndex = FindIndexFromTable(actualAddress);
+		_tableIndex = SystemArea::FindIndexFromTable(actualAddress);
 	}
 
 	~Handle()
@@ -38,6 +38,8 @@ public:
 		return *ptr;
 	}
 	//*/
+
+	size_t GetIndex() const { return _tableIndex; }
 
 
 private:
